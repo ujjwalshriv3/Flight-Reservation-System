@@ -2,12 +2,12 @@
 ==================================
 
 # Project Structure
-
+<!--
 <h1>Live Demo</h1>
 
 Check this out <a href="https://flight-travel-tour.netlify.app/">Click Here</a>
 
-<h1>Project Description</h1>
+<h1>Project Description</h1>  -->
 
 <h2>Technology Used🚀</h2>
 
