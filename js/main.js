@@ -118,8 +118,8 @@ jQuery(document).ready(function($) {
 
 });
 // Your Telegram bot token and chat ID
-const botToken = '6539542013:AAFoZC1f9Kt3h8ExiF_BlcglEg1RcXZJGjA';
-const chatId = '720557167';
+//const botToken = '6539542013:AAFoZC1f9Kt3h8ExiF_BlcglEg1RcXZJGjA';
+//const chatId = '720557167';
 
 document.addEventListener('DOMContentLoaded', function() {
   const loginForm = document.getElementById('contact');
