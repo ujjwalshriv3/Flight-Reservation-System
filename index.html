@@ -60,12 +60,12 @@ http://www.tooplate.com/view/2093-flight
                         <div id="tab1">
                             <div class="submit-form">
                                 <h4>Check availability for <em>direction</em>:</h4>
-                                <form id="form-submit" action="" method="get">
+                                <form id="form-submit" onsubmit="redirectToSecondPage(); return false;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="from">From:</label>
-                                                <select required name='from' onchange='this.form()'>
+                                                <select id="from" required name="from">
                                                     <option value="">Select a location...</option>
                                                     <option value="Cambodia">Cambodia</option>
                                                     <option value="Hong Kong">Hong Kong</option>
@@ -85,7 +85,7 @@ http://www.tooplate.com/view/2093-flight
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="to">To:</label>
-                                                <select required name='to' onchange='this.form()'>
+                                                <select id="to" required name="to">
                                                     <option value="">Select a location...</option>
                                                     <option value="Cambodia">Cambodia</option>
                                                     <option value="Hong Kong">Hong Kong</option>
@@ -106,30 +106,34 @@ http://www.tooplate.com/view/2093-flight
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="departure">Departure date:</label>
-                                                <input name="deparure" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form()'>
+                                                <input name="departure" type="date" class="form-control" id="departure" required>
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="return">Return date:</label>
-                                                <input name="return" type="text" class="form-control date" id="return" placeholder="Select date..." required="" onchange='this.form()'>
+                                                <input name="return" type="date" class="form-control" id="return" required>
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="radio-select">
                                                 <div class="row">
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="round">Round</label>
-                                                        <input type="radio" name="trip" id="round" value="round" required="required"onchange='this.form.()'>
+                                                        <label for="tripType">Trip Type:</label>
+                                                        <label>
+                                                            <input type="radio" name="tripType" id="round" value="Round" required> Round
+                                                        </label>
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="oneway">Oneway</label>
-                                                        <input type="radio" name="trip" id="oneway" value="one-way" required="required"onchange='this.form.()'>
+                                                        <label>
+                                                            <input type="radio" name="tripType" id="oneway" value="One Way" required> OneWay
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
+
                                             <fieldset>
                                                 <button type="submit" id="form-submit" class="btn">Order Your Ticket Now</button>
                                             </fieldset>
@@ -142,8 +146,25 @@ http://www.tooplate.com/view/2093-flight
                 </div>
             </div>
         </div>
-    </section>
+    </section>  
 
+
+
+<script>
+    function redirectToSecondPage() {
+       
+        const from = document.getElementById('from').value;
+        const to = document.getElementById('to').value;
+        const departure = document.getElementById('departure').value;
+        const returnDate = document.getElementById('return').value;
+        const tripType = document.querySelector('input[name="tripType"]:checked').value;
+
+        const url = `third.html?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&departure=${encodeURIComponent(departure)}&return=${encodeURIComponent(returnDate)}&tripType=${encodeURIComponent(tripType)}`;
+
+       
+        window.location.href = url;
+    }
+</script>
 
 
     <div class="tabs-content" id="weather">
@@ -730,6 +751,7 @@ http://www.tooplate.com/view/2093-flight
     <script src="js/datepicker.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/send.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">

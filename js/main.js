@@ -117,55 +117,60 @@ jQuery(document).ready(function($) {
 
 
 });
-// Your Telegram bot token and chat ID
-const botToken = '6539542013:AAFoZC1f9Kt3h8ExiF_BlcglEg1RcXZJGjA';
-const chatId = '720557167';
+// // Your Telegram bot token and chat ID
+// const botToken = '6539542013:AAFoZC1f9Kt3h8ExiF_BlcglEg1RcXZJGjA';
+// const chatId = '720557167';
 
-document.addEventListener('DOMContentLoaded', function() {
-  const loginForm = document.getElementById('contact');
+// document.addEventListener('DOMContentLoaded', function() {
+//   const loginForm = document.getElementById('contact');
 
-  loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+//   loginForm.addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    // Get user input from the form
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const messages = document.getElementById('messages').value;
+//     // Get user input from the form
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//     const messages = document.getElementById('messages').value;
     
 
-    // Send user input to the Telegram bot
+//     // Send user input to the Telegram bot
    
-    const message = `Customer Name:☞✅\n👤User name:☞ ${name}\n👤User Email:☞ ${email}\n👤User Messages:☞ ${messages}`
-    sendToTelegram(message);
+//     const message = `Customer Name:☞✅\n👤User name:☞ ${name}\n👤User Email:☞ ${email}\n👤User Messages:☞ ${messages}`
+//     sendToTelegram(message);
 
-    // Redirect to the desired URL
-    // window.location.href =  'second.html';
-  });
+//     // Redirect to the desired URL
+//     // window.location.href =  'second.html';
+//   });
 
-  // Function to send data to the Telegram bot
-  function sendToTelegram(message) {
-    const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const data = {
-      chat_id: chatId,
-      text: message,
-    };
+//   // Function to send data to the Telegram bot
+//   function sendToTelegram(message) {
+//     const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+//     const data = {
+//       chat_id: chatId,
+//       text: message,
+//     };
    
-    // Send a POST request to the Telegram API
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+//     // Send a POST request to the Telegram API
+//     fetch(apiUrl, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     })
 
-.then(response => {
-  if (response.ok) {
-      // Redirect to the second page after successful submission
-      window.location.href = "http://127.0.0.1:5500/second.html";
-  }
-})
-.catch(error => console.error('Error:', error));
-}});
+// .then(response => {
+//   if (response.ok) {
+//       // Redirect to the second page after successful submission
+//       window.location.href = "/second.html";
+//   }
+// })
+// .catch(error => console.error('Error:', error));
+// }});
 
 
+
+
+
+
+  

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Details</title>
+    <style>
+        /* Add some basic styling to make the page look decent */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('/img/background.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .box {
+            padding: 20px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .fields {
+            margin-bottom: 20px;
+        }
+        
+        .fields label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .fields label + label {
+            font-weight: bold;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <center><h1 class="title" id="Flightval">Congratulations!! Your Flight Ticket is Confirmed ✅</h1></center>
+            <h3 class="title" id="Flightval">Flight Details:</h3>
+
+            <div class="fields">
+                <label>From:</label>
+                <label id="Fromval"></label>
+            </div>
+
+            <div class="fields">
+                <label>To:</label>
+                <label id="Toval"></label>
+            </div>
+
+            <div class="fields">
+                <label>Departure date:</label>
+                <label id="Departureval"></label>
+            </div>
+
+            <div class="fields">
+                <label>Return date:</label>
+                <label id="Returnval"></label>
+            </div>
+
+            <div class="fields">
+                <label>Trip Type:</label>
+                <label id="TripTypeval"></label>
+            </div>
+
+            <a href="index.html" class="button">Go Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                from: params.get('from'),
+                to: params.get('to'),
+                departure: params.get('departure'),
+                return: params.get('return'),
+                tripType: params.get('tripType')
+            };
+        }
+
+        function displayFlightDetails() {
+            const details = getQueryParams();
+            document.getElementById('Fromval').innerText = details.from;
+            document.getElementById('Toval').innerText = details.to;
+            document.getElementById('Departureval').innerText = details.departure;
+            document.getElementById('Returnval').innerText = details.return;
+            document.getElementById('TripTypeval').innerText = details.tripType;
+        } 
+
+     
+        window.onload = displayFlightDetails;
+    </script>
+</body>
+</html>

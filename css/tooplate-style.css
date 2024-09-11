@@ -200,7 +200,7 @@ p {
 }
 
 
-.submit-form h4 {
+.form h4 {
 	width: 100%;
 	font-size: 18px;
 	font-weight: 700;
@@ -254,7 +254,7 @@ p {
 
 .submit-form input {
 	margin-top: 12px;
-	margin-left: 5px;
+	margin-left: 0px;
 	cursor: pointer;
 }
 
@@ -263,7 +263,8 @@ p {
 }
 
 .submit-form button {
-	margin-top: 15px;
+	margin-top: 59px;
+	margin-left: 12px;
 	width: 100%;
 	height: 36px;
 	background-color: #ffe165;
